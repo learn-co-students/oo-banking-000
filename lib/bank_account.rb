@@ -8,20 +8,19 @@ class BankAccount
     @status = "open"
   end
 
-  def deposit(deposit_amount)
-    @balance += deposit_amount
+  def deposit(amount)
+    @balance += amount
   end
 
   def display_balance
     "Your Balance is $#{@balance}."
   end
 
-  def close_account
-    @status = "closed"
-  end
-
   def valid?
     @status == "open" && @balance > 0 ? true : false
   end
 
+  def close_account
+    @status = "closed"
+  end
 end
